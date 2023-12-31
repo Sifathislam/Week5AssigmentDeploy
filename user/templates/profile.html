@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="d-flex align-content-center align-items-center justify-content-center">
+    <img src="{% static 'Profile.png' %}" alt="" style="width: 140px;margin-top: 25px;">
+</div>
+<h2 class="text-center mt-3">Edit Your Profile</h2>
+<div class="d-flex justify-content-center align-content-center align-items-center text-center gap-4 m-5 mt-4">
+    <a href="{% url 'ProfileChange' %}" class="btn btn-warning">
+        Change Profile 
+        </a> 
+        <a href="{% url 'Changepaswwod' %}" class="btn btn-warning">
+        Change Password
+        </a> 
+</div>
+<hr>
+<h1 class="text-center">Purchase History</h1>
+<table class="table table-bordered border-primary mt-4">    
+  <thead>
+  <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Book Name</th>
+      <th scope="col">Category</th>
+      <th scope="col">Price</th>
+      <th scope="col">Borrowd Date</th>
+      <th scope="col">quntity</th>
+      <th scope="col">Description</th>
+      <th scope="col">Return</th>
+
+  </tr>
+  </thead>
+  <tbody>
+      {% for val in data %}
+      <tr>
+      <th scope="row">{{val.id}}</th>
+      <td>{{val.Book.title}}</td>
+      <td>{{val.Book.category.name}}</td>
+      <td>{{val.Book.price}}</td>
+      <td>{{val.purchase_date}}</td>
+      <td>{{val.Book.quntity}}</td>
+      <td>{{val.Book.description | truncatewords:10}}</td>
+      <td>
+        <a href="{% url 'return' id=val.Book.id userid=request.user.id  buyid=val.id %}" class="btn btn-danger">Return</a>
+
+      </td>
+      </tr>
+  {% endfor %}
+  </tbody>
+</table>
+
+{% endblock content %}

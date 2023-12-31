@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+    <title>Libary Management</title>
+    {% block cssstyle %}{% endblock cssstyle %}
+  </head>
+  <body>
+
+{% comment %} Nav Bar Section  {% endcomment %}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="{% url 'homepage' %}">Libary Management</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'homepage' %}">Home</a>
+              </li>
+            {% if request.user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'deposit_money' %}">Deposite</a>
+              </li>
+              {% endif %}
+            </ul>
+            {% if request.user.is_authenticated %}
+            <form class="d-flex">
+              <h3>Welcome, {{ request.user.first_name }} (balance: ${{ request.user.account.balance }})</h3>
+              <a class="btn btn-success text-light mx-3" href="{% url 'profile' %}">Profile</a>
+              <a class="btn btn-success text-light mx-3" href="{% url 'logout' %}">Logout</a>
+            </form>
+          {% else %}
+            <form class="d-flex">
+              <a class="btn btn-warning text-light mx-3" href="{% url 'register' %}">Sign Up</a>
+              <a class="btn btn-success text-light mx-3" href="{% url 'login' %}">Login</a>
+            </form>
+          {% endif %}
+          
+          </div>
+        </div>
+      </nav>
+
+{% comment %} Message show section  {% endcomment %}
+      {% for i in messages %}
+      <script>
+        // Trigger SweetAlert2 automatically based on a condition
+        {% if i.tags == 'warning' %}
+        document.addEventListener('DOMContentLoaded', function() {
+          Swal.fire({
+              title: 'Message!',
+              text: '{{i}}',
+              icon: 'warning',
+              confirmButtonText: 'OK'
+          });
+        });
+        {% else %}
+        document.addEventListener('DOMContentLoaded', function() {
+          Swal.fire({
+              title: 'Message!',
+              text: '{{i}}',
+              icon: 'success',
+              confirmButtonText: 'OK'
+          });
+        });
+        {% endif %}
+    </script>
+    {% endfor %}
+
+{% comment %} Content Section  {% endcomment %}
+  {% block content %}{% endblock content %}
+  </main>
+
+  
+{% comment %} Javascript file section  {% endcomment %}
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  </body>
+</html>
