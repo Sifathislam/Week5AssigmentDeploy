@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h1 class="text-center booksearch-title">Book Search Results</h1>
+<section>
+    <div class="books-container">
+        {% if data %}
+        {% for val in data %}
+            <a href="{% url 'Views_Details' val.id %}" class="text-decoration-none">
+                <div class="book-secondary-container rounded-card" onclick="handleItemClick('${singleData.id}')">
+                    <div class="image-books-class text-decoration-none">
+                        <img src="{{val.image.url}}" class="card-img-top" loading="lazy" alt="...">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <div class="flex-grow-1 text-decoration-none">
+                            <strong class="book-title text-decoration-none">{{val.title}}</strong>
+                        </div>
+                        <!-- Display average rating for the book -->
+                       <div style="color:darkorange; font-size:20px">
+                     {% with rating=ratings|get_item:val.id %}
+                        {% for i in "12345" %}
+                        {% if i|add:0 <= rating %}
+                                <span class="star">★</span>
+                            {% else %}
+                                <span class="star">☆</span>
+                            {% endif %}
+                        {% endfor %}
+                    {% endwith %}
+                       </div>
+                       {% if val.isProduct_Stock %}
+                       <div class="text-success text-decoration-none">Product In Stock</div>
+                        {% else %}
+                       <div class="text-danger text-decoration-none">Product Out Of Stock</div>
+                       {% endif %}
+                       <div class="px-md-2 text-dark fw-bold text-decoration-none">TK.{{val.price}}</div>
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+        {% else %}
+       <div class="d-flex justify-content-center align-items-center flex-column mb-4">
+        <img src="{% static 'pngtree-ui-default-page-page-404-page-loss-no-content-yet-png-image_344465-removebg-preview.png' %}" alt="">
+        <h2 class="text-center text-danger"> No Content Available </h2>
+       </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock content %}
+    

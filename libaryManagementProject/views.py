@@ -9,3 +9,7 @@ def home(request, brand_slug = None):
         print(data)
     Books = Category.objects.all()
     return render(request, 'home.html',{'data': data , 'Books': Books})
+
+
+def aboutus(request):
+    return render(request, 'aboutus.html')

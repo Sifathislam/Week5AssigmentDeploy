@@ -1,0 +1,1015 @@
+/* =================== ROOT  ==================
+/* font-family: 'Mulish', sans-serif; */
+@import url("https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+body {
+  text-decoration: none;
+  /* height: 0px; */
+}
+/*=================== Navber design  ==================*/
+.navbarImage {
+  width: 160px;
+  margin-left: 91px;
+}
+.navbar {
+  background-color: white !important;
+  border-color: white !important;
+  box-shadow: 0px 0px 10px #5e5e5e !important;
+}
+.fixed-top {
+  position: fixed;
+  top: 0;
+  /* right: -15px; */
+  left: -42px;
+  z-index: 1030;
+}
+/* Underline From Center */
+.hvr-underline-from-center {
+  font-family: "Mulish", sans-serif;
+  color: #1a2d62 !important;
+  font-size: 18px !important;
+  font-weight: 700;
+  padding: 6px 20px !important;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+.hvr-underline-from-center:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  background: #1a2d62;
+  height: 3px;
+  border-radius: 5px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-from-center:hover {
+  color: #2eca7f !important;
+}
+.hvr-underline-from-center:hover:before,
+.hvr-underline-from-center:focus:before,
+.hvr-underline-from-center:active:before {
+  left: 0;
+  right: 0;
+}
+/*=================== Navber design  ==================*/
+.btn-of-signup {
+  color: #1a2d62;
+  font-family: "Mulish", sans-serif;
+  text-decoration: none;
+  border: 1px solid #ededed;
+  padding: 10px 30px;
+  font-weight: 700;
+  display: inline-block;
+  border-radius: 100px;
+  font-size: 16px;
+  transition: 0.3s;
+  text-align: center;
+}
+.btn-of-signup:hover {
+  color: #fff;
+  border: 1px solid #2eca7f;
+  background: #2eca7f;
+}
+
+/* Bounce To Bottom */
+.hvr-bounce-to-bottom {
+  font-family: "Mulish", sans-serif;
+  text-decoration: none;
+  border: 1px solid #ededed;
+  padding: 10px 30px;
+  font-weight: 700;
+  display: inline-block;
+  border-radius: 100px;
+  font-size: 16px;
+  transition: 0.3s;
+  text-align: center;
+  color: #fff;
+  border: 1px solid #2eca7f;
+  background: #2eca7f;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+}
+.hvr-bounce-to-bottom:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 100px;
+  background: #1a2d62;
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-bounce-to-bottom:hover {
+  border: 1px solid #1a2d62;
+}
+.hvr-bounce-to-bottom:hover,
+.hvr-bounce-to-bottom:focus,
+.hvr-bounce-to-bottom:active {
+  color: white;
+}
+.hvr-bounce-to-bottom:hover:before,
+.hvr-bounce-to-bottom:focus:before,
+.hvr-bounce-to-bottom:active:before {
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+  -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+
+@media screen and (max-height: 300px) {
+  .barnd_name_ul {
+    margin-top: 40px;
+  }
+}
+
+/*=================== Banner design  ==================*/
+.banner-Section {
+  position: relative;
+  z-index: -10;
+  background: rgb(216, 242, 240);
+  background: linear-gradient(
+    90deg,
+    rgba(216, 242, 240, 1) 0%,
+    rgba(243, 250, 249, 1) 50%,
+    rgba(254, 241, 241, 1) 100%
+  );
+  height: 1065px;
+}
+
+/* Sweep To Right */
+.banner-content-view-button {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.banner-content-view-button:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2eca7f;
+  border-radius: 50px;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.banner-content-view-button:hover,
+.banner-content-view-button:focus,
+.banner-content-view-button:active {
+  color: white;
+}
+.banner-content-view-button:hover:before,
+.banner-content-view-button:focus:before,
+.banner-content-view-button:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.home_image {
+  margin-top: 35px;
+  position: relative;
+}
+.circle-image-of-banner {
+  z-index: -2;
+  top: 176px;
+  left: 141px;
+}
+.circle-image-of-banner img {
+  width: 555px;
+}
+.home_text h1 {
+  font-size: 80px;
+  padding-top: 250px;
+  padding-left: 30px;
+  font-weight: 700;
+  line-height: 100px;
+  margin-bottom: 20px;
+  letter-spacing: 0px;
+  margin: 0px;
+  font-family: "Mulish", sans-serif;
+  color: #1a2d62;
+}
+.home_text h1 span {
+  font-size: 80px;
+  font-weight: 700;
+  line-height: 100px;
+  margin-bottom: 20px;
+  letter-spacing: 0px;
+  margin: 0px;
+  font-family: "Mulish", sans-serif;
+  color: #2dc77d;
+}
+.home_text p {
+  margin-bottom: 40px;
+  font-weight: 400;
+  font-size: 19px;
+  padding: 24px;
+  font-family: "Mulish", sans-serif;
+  color: #888;
+  line-height: 26px;
+}
+.home_text a {
+  padding: 18px;
+  text-decoration: none;
+  position: relative;
+  font-size: 20px;
+  color: #1a2d62;
+  font-weight: 700;
+  left: 30px;
+}
+.arrowsignpng {
+  width: 23px;
+  padding-bottom: 4px;
+}
+
+.banner-girl-img img {
+  position: relative;
+  top: 171px;
+  left: 47px;
+  z-index: -1;
+}
+.banner-active-user {
+  background: #fff;
+  width: 206px;
+  padding: 24px;
+  padding-bottom: 10px;
+  border-radius: 30px;
+  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+  position: absolute;
+  top: 61%;
+  left: 50px;
+}
+.banner-active-user h2 {
+  position: relative;
+  top: -51px;
+  left: 70px;
+  display: inline-block;
+  overflow: hidden;
+  font-weight: 800;
+  letter-spacing: 0px;
+  margin-bottom: -20px;
+  font-family: "Mulish", sans-serif;
+  color: #1a2d62;
+}
+.banner-active-user span {
+  position: relative;
+  color: gray;
+  top: -10px;
+  left: 68px;
+  display: inline-block;
+  font-size: 16px;
+  font-family: "Mulish", sans-serif;
+}
+
+.banner-totalBook {
+  background: #fff;
+  width: 206px;
+  padding: 24px;
+  padding-bottom: 10px;
+  border-radius: 30px;
+  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+  position: absolute;
+  top: 27%;
+  left: 67%;
+}
+.banner-totalBook h2 {
+  position: relative;
+  top: -51px;
+  left: 70px;
+  display: inline-block;
+  overflow: hidden;
+  font-weight: 800;
+  letter-spacing: 0px;
+  margin-bottom: -20px;
+  font-family: "Mulish", sans-serif;
+  color: #1a2d62;
+}
+.banner-totalBook span {
+  position: relative;
+  color: gray;
+  top: -10px;
+  left: 68px;
+  display: inline-block;
+  font-size: 16px;
+  font-family: "Mulish", sans-serif;
+}
+/* ==================== Card Section ====================  */
+.Card_section_text {
+  padding: 58px;
+  margin-bottom: 30px;
+  position: relative;
+  -webkit-transition: all 0.3s ease 0s;
+  transition: all 0.3s ease 0s;
+  box-shadow: 0px 0px 150px 0px rgba(78, 67, 250, 0.1);
+  border-right: 1px solid #ededed;
+}
+.Card_section_text h3 {
+  font-size: 25px;
+  position: relative;
+  left: 24px;
+  font-weight: 800;
+  margin-bottom: 15px;
+  overflow: hidden;
+  letter-spacing: 0px;
+  margin: 0px;
+  font-family: "Mulish", sans-serif;
+  color: #1a2d62;
+}
+.Card_section_text p {
+  font-weight: 400;
+  font-size: 17px;
+  padding: 24px;
+  font-family: "Mulish", sans-serif;
+  color: #888;
+  line-height: 26px;
+}
+.Card_section_text a {
+  padding: 16px;
+  text-decoration: none;
+  position: relative;
+  font-size: 18px;
+  color: #1a2d62;
+  font-weight: 700;
+  left: 5px;
+}
+.arrowsignpng {
+  width: 23px;
+  padding-bottom: 4px;
+}
+
+/*========================= Category Design ====================================  */
+.barnd_name_ul {
+  padding: 0;
+  list-style: none;
+  display: table;
+  text-align: center;
+  margin: 0px !important;
+}
+.barnd_name_li {
+  display: table-cell;
+  position: relative;
+  padding: 15px 0;
+}
+.barnd_name {
+  color: black;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.15em;
+
+  display: inline-block;
+  padding: 15px 20px;
+  position: relative;
+}
+.barnd_name:hover {
+  color: #1a2d62 !important;
+}
+.barnd_name:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  /* background: #1a2d62 !important; */
+  background: #2dc77d !important;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.barnd_name:hover:after {
+  width: 100%;
+  left: 0;
+}
+
+/* ==================== Books Section ====================  */
+.Products_Silder {
+  width: 1220px !important;
+  margin: auto;
+}
+.ratio > * {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  width: 100% !important;
+  height: 100% !important;
+  /* margin: 30px !important; */
+}
+.rounded-card {
+  border-radius: 15px !important;
+}
+.slider-container > * {
+  width: 85%;
+}
+.card-text-books {
+  font-weight: 400 !important;
+  font-size: 17px !important;
+  padding: 5px !important;
+  font-family: "Mulish", sans-serif !important;
+  color: #888 !important;
+  line-height: 26px !important;
+}
+.flex-grow-1 {
+  font-size: 20px;
+  color: #132249 !important;
+}
+.px-md-2 {
+  color: #2dc77d !important;
+}
+
+.book-card-button {
+  color: #1a2d62;
+  font-family: "Mulish", sans-serif;
+  text-decoration: none;
+  border: 1px solid #ededed;
+  padding: 10px 30px;
+  font-weight: 700;
+  display: inline-block;
+  border-radius: 15px;
+  font-size: 16px;
+  transition: 0.3s;
+  text-align: center;
+}
+.book-card-button:hover {
+  color: #fff;
+  border: 1px solid #2eca7f;
+  background: #2eca7f;
+}
+
+/* ==================== Login Section ====================  */
+.section_top {
+  padding-top: 11px;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.section_top img {
+  height: 534px;
+  margin-left: -620px;
+}
+.div-continer-login-title {
+  position: relative;
+  top: -272px;
+}
+.style-of-subtitle {
+  background: #fff;
+  text-align: center;
+  border: 2px solid #fff;
+  padding: 10px 20px;
+  width: 220px;
+  margin: auto;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+.tile-login {
+  letter-spacing: 0px;
+  margin: 0px;
+  font-family: "Mulish", sans-serif;
+  color: #1a2d62;
+  line-height: 1.2;
+  margin-bottom: 10px;
+  text-transform: capitalize;
+  font-weight: 700;
+  font-size: 50px;
+}
+.homepagelinklogin {
+  color: #2eca7f !important;
+  font-weight: 500;
+  font-family: "Mulish", sans-serif;
+  font-size: 18px;
+  text-decoration: none;
+  margin-right: 5px;
+}
+.homepagelinklogin:hover {
+  color: #1a2d62 !important;
+  font-weight: 600;
+}
+.login-page-text-sub {
+  color: #1a2d62 !important;
+  display: inline-block;
+  /* font-family: "Mulish", sans-serif; */
+  font-size: 18px;
+}
+
+/* .login_register {
+  background: rgba(199, 201, 209, 0.09);
+} */
+.section-padding {
+  padding: 10px 0;
+}
+.login {
+  background: #fff none repeat scroll 0 0;
+  -webkit-box-shadow: 0px 0px 30px rgba(1, 41, 112, 0.08);
+  box-shadow: 0px 0px 30px rgba(1, 41, 112, 0.08);
+  overflow: hidden;
+  padding: 30px;
+  border: 1px solid #d3ced2;
+}
+
+.login_register_title {
+  margin-bottom: 30px;
+  margin-top: 0;
+  text-align: center;
+  text-transform: capitalize;
+  font-size: 30px;
+  font-weight: 799;
+  letter-spacing: 0px;
+  font-family: "Mulish", sans-serif;
+  color: #1a2d62;
+}
+.login label {
+  margin-bottom: 5px;
+  /* font-weight: 500; */
+  color: gray;
+  font-size: 18px;
+  display: inline-block;
+}
+.login input {
+  margin-bottom: 30px;
+  background: #f4f4f4;
+  height: 50px;
+}
+.login button,
+.register button {
+  border: none;
+  width: 100%;
+}
+
+.btn_one {
+  background: #2eca7f;
+  font-size: 18px;
+  padding: 10px 30px;
+  color: #fff;
+  display: inline-block;
+  border-radius: 100px;
+  font-weight: 700;
+  box-shadow: 10px 15px 18px rgba(23, 23, 36, 0.1);
+  vertical-align: middle;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.btn_one:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 100px;
+  background: #1a2d62;
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  -webkit-transform-origin: 50% 0;
+  transform-origin: 50% 0;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-bounce-to-bottom:hover {
+  border: 1px solid #1a2d62;
+}
+.btn_one:hover,
+.btn_one:focus,
+.btn_one:active {
+  color: white;
+}
+.btn_one:hover:before,
+.btn_one:focus:before,
+.btn_one:active:before {
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+  -webkit-transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+  transition-timing-function: cubic-bezier(0.52, 1.64, 0.37, 0.66);
+}
+
+.login p,
+.register p {
+  color: #2a2b41 !important;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 19px;
+  font-size: 18px;
+  font-family: "Mulish", sans-serif;
+}
+.login p a,
+.register p a {
+  font-weight: 600;
+  color: #2eca7f;
+  font-family: "Mulish", sans-serif;
+}
+/* ==================== Register Section ====================  */
+
+.register {
+  background: #fff none repeat scroll 0 0;
+  -webkit-box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+  box-shadow: 0px 0 30px rgba(1, 41, 112, 0.08);
+  overflow: hidden;
+  padding: 30px;
+  border: 1px solid #d3ced2;
+}
+
+.register label {
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #888;
+  font-family: "Mulish", sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 26px;
+}
+label {
+  display: inline-block;
+}
+
+.register input {
+  margin-bottom: 30px;
+  background: #f4f4f4;
+  height: 50px;
+}
+/* ==================== Books Section ====================  */
+
+/* Sweep To Right */
+.hvr-sweep-to-right-book-category {
+  color: #132249;
+  font-family: "Mulish", sans-serif !important;
+  font-weight: 600;
+  padding: 20px 60px;
+  border-radius: 8px;
+  border: 1px solid #2dc77d;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  -webkit-transition-property: color;
+  transition-property: color;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+}
+.hvr-sweep-to-right-book-category:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #2dc77d;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-sweep-to-right-book-category:hover,
+.hvr-sweep-to-right-book-category:focus,
+.hvr-sweep-to-right-book-category:active {
+  color: white;
+  font-family: "Mulish", sans-serif !important;
+  font-weight: 600;
+}
+.hvr-sweep-to-right-book-category:hover:before,
+.hvr-sweep-to-right-book-category:focus:before,
+.hvr-sweep-to-right-book-category:active:before {
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+.Category_books_ul {
+  list-style: none;
+  padding: 1rem !important;
+  margin-top: 0px !important;
+}
+.image-books-class img {
+  width: 170px !important;
+}
+.books-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.book-secondary-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: start;
+  text-align: center;
+  width: 225px;
+  height: 379px;
+  padding-top: 50px;
+  border: 1px solid #2eca7f;
+  margin: 30px;
+  box-shadow: 0px 0px 10px #2eca7f;
+}
+.full_books {
+  margin: 80px;
+  border-radius: 10px;
+  margin-top: 90px;
+}
+.full_books h1 {
+  font-family: "Mulish", sans-serif;
+  font-size: 45px;
+  font-weight: 300;
+  color: #132249;
+}
+.book-title {
+  font-size: 15px;
+  font-weight: 400;
+}
+/* ==================== Deposite Section ====================  */
+.deposite-money {
+  /* margin-top: 50px !important; */
+  /* margin-bottom: 300px !important; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.deposite-form {
+  width: 65% !important;
+}
+/* **how it works deposite  */
+.section {
+  position: relative;
+  padding: 104px 0;
+  padding: 6.5rem 0;
+}
+.text-9 {
+  font-size: 36px !important;
+  font-size: 2.25rem !important;
+}
+.featured-box.style-2 p {
+  margin-left: -50px;
+}
+
+.featured-box.style-3 {
+  padding-left: 90px;
+  padding-top: 0px;
+  display: flex;
+  width: 490px;
+}
+
+.text-3 {
+  font-size: 16px !important;
+  font-size: 1rem !important;
+}
+.btn:not(.btn-link):not(.cancelBtn):not(.applyBtn) {
+  -webkit-box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+}
+.featured-box-icon {
+  font-size: 70px;
+  color: #d6d6d6 !important;
+  display: inline;
+}
+.way-send-design-card {
+  margin-left: -150px !important;
+}
+/* ==================== profile_logo_design Section ====================  */
+.profile_logo_design {
+  left: -65px !important;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.edit_porfile_title {
+  margin-top: 100px;
+}
+/* ==================== about Section ====================  */
+.ab_one {
+  padding-bottom: 50px;
+}
+.ab_content {
+  margin-bottom: 30px;
+  position: relative;
+}
+.ab_content h2 {
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-transform: capitalize;
+  line-height: 54px;
+  font-size: 44px;
+  color: #132249;
+}
+.ab_content h2 span {
+  color: #2eca7f !important;
+}
+.ab_content h2 u {
+  color: #2eca7f;
+}
+.ab_content p {
+  margin-bottom: 30px;
+}
+.ab_content p {
+  margin-bottom: 30px;
+}
+.abmv {
+  margin-bottom: 30px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid #eee;
+  transition: 0.3s;
+}
+.abmv:hover {
+  border-left: 4px solid #2eca7f;
+}
+.abmv span {
+  background: rgba(46, 202, 127, 0.2);
+  float: left;
+  margin-right: 20px;
+  display: block;
+  width: 70px;
+  height: 70px;
+  color: #2eca7f;
+  line-height: 70px;
+  text-align: center;
+  font-size: 26px;
+  border-radius: 100px;
+}
+.abmv h4 {
+  font-weight: 800;
+  overflow: hidden;
+  margin-bottom: 10px;
+  font-size: 22px;
+}
+.abmv p {
+  overflow: hidden;
+}
+.ss_btn {
+  margin-top: 50px;
+}
+
+.ab_img {
+  position: relative;
+}
+.ab_img img {
+  padding-right: 40px;
+}
+@media only screen and (max-width: 880px) {
+  .ab_img img {
+    padding-right: 0px;
+    width: 100%;
+  }
+  .ab_img {
+    margin-top: 0px;
+    margin-bottom: 60px;
+  }
+}
+/* ==================== Comapany Section ====================  */
+.companylistSlider {
+  width: 1348px;
+  margin-left: -115px;
+  box-shadow: none !important;
+}
+
+/* ==================== Search Section ====================  */
+.booksearch-title {
+  margin-top: 135px !important;
+  margin-bottom: 10px !important;
+  color: #2eca7f !important;
+  font-family: "Mulish", sans-serif !important;
+  font-size: 35px !important;
+}
+
+/* ==================== Top Publisher Section ====================  */
+.top-publisehr-info img {
+  border-radius: 423px !important;
+  /* border: 1px solid; */
+  width: 28% !important;
+  height: 47% !important;
+}
+.top-publisher-p {
+  width: 41% !important;
+  top: 73px !important;
+  left: -19px !important;
+  height: 50% !important;
+}
+.image-all-publihser {
+  border-radius: 100px;
+  width: 150px !important;
+  margin: 40px;
+  margin-bottom: -13px;
+}
+.publiseh {
+  margin-top: 145px !important;
+}
+.all-publisher-p{
+  font-size: 18px;
+  color: #2dc77d;
+}
+.hover-border:hover{
+  border: 1px solid #2dc77d;
+}
+/* ==================== Footer Section ====================  */
+
+.footer-header {
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-weight: 700;
+  text-transform: capitalize;
+  font-size: 20px;
+  letter-spacing: 0px;
+  margin: 0px;
+  font-family: "Mulish", sans-serif;
+}
+
+/* Underline From Left */
+.footer-hvr-underline-from-left {
+  padding-bottom: 2px;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+.footer-hvr-underline-from-left:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  background: #2eca7f;
+  height: 2px;
+  -webkit-transition-property: right;
+  transition-property: right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.footer-hvr-underline-from-left:hover:before,
+.footer-hvr-underline-from-left:focus:before,
+.footer-hvr-underline-from-left:active:before {
+  right: 0;
+}

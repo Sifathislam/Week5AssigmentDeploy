@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block cssstyle %}
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+<link rel="stylesheet" href="css/publisher.css">
+{% endblock cssstyle %}
+
+{% block content %}
+  
+    <section class="publiseh">
+        <div class="partner_title"style="margin-bottom:-30px">
+            <h3 class="text-center" style="font-size:30px">ALL Publishers </h3>
+          </div> 
+        <p class="mx-5 text-center">Writing! Literally speaking, a person who writes something creative is called a writer. But by 'writing' one does not understand the truth to write extent. This practical parallel author is a driving force in the story. Fictional characters come alive in his pen and ink. A writer can complete the thinking of a generation through his writings. So similar dot com parikars to guide the legendary path of writers.</p>
+        <div class="mt-5">
+            <div class="row w-75 m-auto">
+                {% for  single_data in data  %}
+                <div class="col-4 col-xl-4 col-xxl-4 col-lg-4 col-md-6 col-sm-12 col-xs-12 gap-4 mb-4 d-flex flex-column justify-content-center align-items-center text-align-center">
+                    <img src="{{single_data.image.url}}" alt="" srcset="" class="image-all-publihser hover-border">
+                    <p class="all-publisher-p ">{{ single_data.user.user.first_name }}</p>
+
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+
+    </section>
+    <section class="top_publiseh mt-5">
+        <div class="partner-logo section-padding">
+            <div class="container">
+              <div class="row">
+                <div class="col-lg-12 text-center">
+                  <div class="partner_title" style="margin-bottom:-50px">
+                    <h3>Top Publishers </h3>
+                  </div>        
+                  <div class="companylistSlider swiffy-slider slider-item-show4 slider-nav-outside slider-nav-dark slider-nav-sm slider-nav-visible slider-nav-page slider-item-snapstart slider-nav-autoplay slider-nav-autopause slider-item-ratio slider-item-ratio-contain slider-item-ratio-32x9 bg-white shadow-lg py-lg-4" data-slider-nav-autoplay-interval="2000" style="height: 200px;">
+
+                    <div class="slider-container" style="margin-left: 102px;margin-right: -34px;margin-top: 34px;">
+                       {% for Publisher in top_publishers %}
+                       <div class="top-publisehr-info">
+                           <p class="top-publisher-p ">{{ Publisher.user.user.first_name }}</p>
+                        <img src="{{Publisher.image.url}}" loading="lazy" alt="...">
+                    </div>
+                       {% endfor %}
+                    </div>
+                    <button type="button" class="slider-nav" aria-label="Go left"></button>
+                    <button type="button" class="slider-nav slider-nav-next" aria-label="Go left"></button>
+          
+                  </div>
+                </div><!-- END COL  -->
+              </div><!--END  ROW  -->
+            </div><!-- END CONTAINER  -->
+          </div>
+
+    </section>
+    
+{% endblock content %}
+    

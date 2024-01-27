@@ -1,14 +1,74 @@
 {% extends 'base.html' %}
-{%  load crispy_forms_tags %}
+{% load static %}
+
+{% block cssstyle %}
+{% endblock cssstyle %}
 {% block content %}
+ {% comment %} ==================== Section Of LOIGN ==================  {% endcomment %}
+ <section class="section_top overflow-hidden position-relative">
+  <img src="{% static 'section-top.png' %}" alt="">
+  <div class="container div-continer-login-title">
+    <div class="col-lg-10 offset-lg-1 text-center">
+      <div class="section-top-title wow fadeInRight" style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeInRight;">
+        <h1 class="tile-login">Register Page</h1>
+        <ul class="d-flex align-items-center justify-content-center style-of-subtitle">
+          <li class="list-unstyled">
+            <a href="{% url 'homepage' %}" class="homepagelinklogin">Home</a>
+          </li>
+          <li class="list-unstyled login-page-text-sub">
+            / Register
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+ </section>
 
+ <section class="login_register section-padding pb-5 mb-5">
+    <div class="container">
+        <div class="row">				
+            <div class="col-lg-6 offset-lg-3 col-xs-12">
+                <form action="{% url 'register' %}" method="post">
+                {% csrf_token %}
+                <div class="register">
+                    <h4 class="login_register_title">Create a new account:</h4>
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" class=" form-control requiredField input-label" name="username">
+                    </div>
+                    <div class="form-group">
+                        <label for="first_name">First Name</label>
+                        <input type="text" id="first_name" class=" form-control requiredField input-label" name="first_name">
+                    </div>
+                    <div class="form-group">
+                        <label for="last_name">Last Name</label>
+                        <input type="text" id="last_name" class=" form-control requiredField input-label" name="last_name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control requiredField input-label" name="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password1">Password</label>
+                        <input type="password" id="password1" class="form-control requiredField input-label" name="password1">
+                    </div>
+                    <div class="form-group">
+                        <label for="password2">Confirm Password</label>
+                        <input type="password" id="password2" class="form-control requiredField input-label" name="password2">
+                    </div>
+                    <div class="form-group col-lg-12">
+                        <button class="btn_one" type="submit" name="submit">Signup now</button>
+                    </div>
+                    <p>Already have an account? <a href="{% url 'login' %}" class="text-decoration-none">Login</a></p>
+                </div>
+            </form>
+            </div><!--- END COL -->
+        </div><!--- END ROW -->
+    </div><!--- END CONTAINER -->
+</section>
 
-<h1 class ="text-center text-primary mt-5">{{type}} Account</h1>
-<form style="width:50% ; margin : auto" method="post">
-    {% csrf_token %}
-    {{form | crispy}}
-
-<button class="btn btn-warning">Submit</button>
-</form>
-
-{% endblock %}
+{% endblock content %}
+{% block jsfile %}
+{% endblock jsfile %}
+    
+ 

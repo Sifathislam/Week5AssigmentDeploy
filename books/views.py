@@ -1,14 +1,17 @@
 from django.shortcuts import render,redirect
 from . import models
 from books.models import Book
-from books.models import review,Purcehase_history
+from books.models import review,Purcehase_history,Ratings
 from books.forms import reviewForm
 from user.models import UserAccount
 from django.contrib import messages
 from django.template.loader import render_to_string
 from django.core.mail import EmailMessage, EmailMultiAlternatives
-
-
+from category.models import Category
+from django.db.models import Avg
+from django.template.defaulttags import register
+from django.shortcuts import render
+from django.db.models import Q
 # Create your views here.
 def send_transaction_email(user, subject, template):
         message = render_to_string(template, {
@@ -18,6 +21,46 @@ def send_transaction_email(user, subject, template):
         send_email.attach_alternative(message, "text/html")
         send_email.send()
 
+from django.db.models import Avg
+
+def symbol_to_numeric(symbol):
+    # Define a mapping between symbols and numeric values
+    symbol_mapping = {
+        '★☆☆☆☆': 1,
+        '★★☆☆☆': 2,
+        '★★★☆☆': 3,
+        '★★★★☆': 4,
+        '★★★★★': 5,
+    }
+    return symbol_mapping.get(symbol, 0)  # Return 0 for unknown symbols
+
+def booksShow(request, brand_slug=None):
+    data = Book.objects.all()
+
+    if brand_slug is not None:
+        brand_name = Category.objects.get(slug=brand_slug)
+        data = Book.objects.filter(category=brand_name)
+
+    # Retrieve average ratings for each book
+    book_ratings = {}
+    for book in data:
+        # Retrieve all ratings for the book
+        ratings = Ratings.objects.filter(Book=book)
+
+        # Calculate the average numeric rating
+        if ratings.exists():
+            average_numeric_rating = sum(symbol_to_numeric(rating.rating) for rating in ratings) / len(ratings)
+            book_ratings[book.id] = round(average_numeric_rating)
+        else:
+            book_ratings[book.id] = None
+    allcategory = Category.objects.all()
+    return render(request, 'books.html', {'data': data, 'Category': allcategory, 'ratings': book_ratings})
+
+@register.filter
+def get_item(dictionary, key):
+    if isinstance(dictionary, dict):
+        return dictionary.get(key)
+    return None
 def ViewDetails(request, id):
     book = Book.objects.get(pk=id)
     comments = review.objects.all()
@@ -101,5 +144,31 @@ def bookReturn(request, id,userid,buyid):
             request,
             f'Your balance is not enough to buy this book or the book is finished'
         )
-        send_transaction_email(request.user, "Book Return Message Faild", "bookreturnfaild.html")
+        send_transaction_email(request.user, "Book Return Message Failled", "bookreturnfaild.html")
     return render(request,'ViewDetaisl.html', {'object': data})
+
+
+
+# For search emplement 
+
+# search_query = request.GET.get('search', '') 
+        # if search_query: 
+        #     data = data.filter( 
+        #         Q(name__icontains=search_query) | Q( 
+        #             description__icontains=search_query)| Q( 
+        #             category__name__icontains=search_query) 
+        #     )
+
+def Search_Book_Fillter(request):
+    search_query = request.GET.get('search', '')
+    
+    if search_query:
+        data = Book.objects.filter(
+            Q(title__icontains=search_query) | 
+            Q(description__icontains=search_query) | 
+            Q(category__name__icontains=search_query)
+        )
+    else:
+        data = Book.objects.all()
+
+    return render(request, 'search_Book.html', {'data': data})

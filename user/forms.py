@@ -11,14 +11,19 @@ class RegistationForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ['username', 'first_name','last_name','email']
+        fields = ['username', 'first_name', 'last_name', 'email']
+
     def save(self, commit=True):
-            our_user = super().save(commit=False) # ami database e data save korbo na ekhn
-            if commit == True:
-                our_user.save() # user model e data save korlam
-                UserAccount.objects.create(
-                    user = our_user,)
-            return our_user
+        our_user = super().save(commit=False)
+        our_user.first_name = self.cleaned_data['first_name']
+        our_user.last_name = self.cleaned_data['last_name']
+        our_user.email = self.cleaned_data['email']
+
+        if commit:
+            our_user.save()
+            if not hasattr(our_user, 'account'):
+                UserAccount.objects.create(user=our_user)
+        return our_user
 
 
 class ChangeUserForm(UserChangeForm):

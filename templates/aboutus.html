@@ -1,0 +1,235 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<section class="section_top overflow-hidden position-relative" style="margin-bottom: -130px;">
+    <img src="{% static 'section-top.png' %}" alt="">
+    <div class="container div-continer-login-title">
+      <div class="col-lg-10 offset-lg-1 text-center">
+        <div class="section-top-title wow fadeInRight" style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeInRight;">
+          <h1 class="tile-login">About Page</h1>
+          <ul class="d-flex align-items-center justify-content-center style-of-subtitle">
+            <li class="list-unstyled">
+              <a href="{% url 'homepage' %}" class="homepagelinklogin">Home</a>
+            </li>
+            <li class="list-unstyled login-page-text-sub">
+              / About  Page
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+   </section>
+  {% comment %} ======== Top Featurs =========  {% endcomment %}
+  <section class="tp_feature">
+    <div class="container-fluid">			
+         <div class="row">					
+             <div class="col-lg-4 col-sm-4 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0" style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeInUp;">
+                 <div class="single_tp">
+                     <h3>Quality Education</h3>
+                     <p>Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor incididunt ut labore. </p>
+                     <a href="#" class="cta"><span>Explore</span>
+                       <svg width="13px" height="10px" viewBox="0 0 13 10">
+                         <path d="M1,5 L11,5"></path>
+                         <polyline points="8 1 12 5 8 9"></polyline>
+                       </svg>
+                     </a>
+                 </div>
+             </div><!-- END COL -->			
+             <div class="col-lg-4 col-sm-4 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0" style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeInUp;">
+                 <div class="single_tp">
+                     <h3>Experienced Teachers</h3>
+                     <p>Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor incididunt ut labore.</p>
+                     <a href="#" class="cta"><span>Explore</span>
+                       <svg width="13px" height="10px" viewBox="0 0 13 10">
+                         <path d="M1,5 L11,5"></path>
+                         <polyline points="8 1 12 5 8 9"></polyline>
+                       </svg>
+                     </a>
+                 </div>
+             </div><!-- END COL -->			
+             <div class="col-lg-4 col-sm-4 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s" data-wow-offset="0" style="visibility: visible; animation-duration: 1s; animation-delay: 0.4s; animation-name: fadeInUp;">
+                 <div class="single_tp">
+                     <h3>Life Time Support</h3>
+                     <p>Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor incididunt ut labore.</p>
+                     <a href="#" class="cta"><span>Explore</span>
+                       <svg width="13px" height="10px" viewBox="0 0 13 10">
+                         <path d="M1,5 L11,5"></path>
+                         <polyline points="8 1 12 5 8 9"></polyline>
+                       </svg>
+                     </a>
+                 </div>
+             </div><!-- END COL -->							
+         </div><!-- END ROW -->
+     </div><!-- END CONTAINER -->
+ </section>
+
+            {% comment %}================  About us ==============  {% endcomment %}
+            <section class="ab_one section-padding">
+                <div class="container">									
+                    <div class="row">								
+                        <div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0" style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeInUp;">
+                            <div class="ab_img">
+                                <img src="{% static 'about2.png' %}" class="img-fluid" alt="image">
+                            </div>
+                        </div><!--- END COL -->					
+                        <div class="col-lg-6 col-sm-12 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0" style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeInUp;">
+                            <div class="ab_content">
+                                <h2>Learn new skills to go <u><span>ahead for your </span></u> career.</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur notted adipisicing elit sed do eiusmod tempor incididunt ut labore et simply. From blogs to emails to ad copies, auto-generate catchy, original, and high-converting copies in popular tones languages.From blogs to emails to ad copies, auto-generate catchy, original and high-converting copies.</p>
+                                <p><strong>Auto-generate catchy original and high-converting copies in popular tones languages. From blogs to emails to ad copies auto-generate catchy</strong></p>
+                                <a class="btn_one" href="about.html">Read More us</a>
+                            </div>						
+                        </div><!--- END COL -->								  
+                    </div><!--- END ROW -->
+                </div><!--- END CONTAINER -->
+            </section>
+                {% comment %} Why choose us {% endcomment %}
+                <section class="marketing_content_area section-padding">
+                    <div class="container">
+                         <div class="section-title">
+                             <h2>Why Choose Penn</h2>
+                             <p>Find the <span><u>best features</u></span> of Penn.</p>
+                         </div>		
+                         <div class="row">									
+                             <div class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0" style="visibility: visible; animation-duration: 1s; animation-delay: 0.1s; animation-name: fadeInUp;">
+                                 <div class="single_feature_one">
+                                     <div class="sf_top">
+                                         <span class="ti-book ss_one"></span>
+                                         <h2><a href="single-service.html" target="_blank">Learn More Anywhere</a></h2>
+                                     </div>
+                                     <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor ut labore.</p>
+                                 </div>					
+                             </div><!-- END COL -->								
+                             <div class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.2s" data-wow-offset="0" style="visibility: visible; animation-duration: 1s; animation-delay: 0.2s; animation-name: fadeInUp;">
+                                 <div class="single_feature_one">
+                                     <div class="sf_top">
+                                         <span class="ti-heart ss_two"></span>
+                                         <h2><a href="single-service.html" target="_blank">Expert <br>Instructor</a></h2>
+                                     </div>	
+                                     <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor ut labore.</p>
+                                 </div>					
+                             </div><!-- END COL -->								
+                             <div class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0" style="visibility: visible; animation-duration: 1s; animation-delay: 0.3s; animation-name: fadeInUp;">
+                                 <div class="single_feature_one">
+                                     <div class="sf_top">
+                                         <span class="ti-user ss_three"></span>
+                                         <h2><a href="single-service.html" target="_blank">Team <br>Management</a></h2>
+                                     </div>	
+                                     <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor ut labore.</p>
+                                 </div>					
+                             </div><!-- END COL -->								
+                             <div class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s" data-wow-offset="0" style="visibility: visible; animation-duration: 1s; animation-delay: 0.4s; animation-name: fadeInUp;">
+                                 <div class="single_feature_one">
+                                     <div class="sf_top">
+                                         <span class="ti-eye ss_four"></span>
+                                         <h2><a href="single-service.html" target="_blank">Course <br> Planing</a></h2>
+                                     </div>	
+                                     <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor ut labore.</p>
+                                 </div>					
+                             </div><!-- END COL -->								
+                             <div class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.5s" data-wow-offset="0" style="visibility: visible; animation-duration: 1s; animation-delay: 0.5s; animation-name: fadeInUp;">
+                                 <div class="single_feature_one">
+                                     <div class="sf_top">
+                                         <span class="ti-light-bulb ss_five"></span>
+                                         <h2><a href="single-service.html" target="_blank">Teacher Monitoring</a></h2>
+                                     </div>		
+                                     <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor ut labore.</p>
+                                 </div>					
+                             </div><!-- END COL -->								
+                             <div class="col-lg-4 col-sm-6 col-xs-12 wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.6s" data-wow-offset="0" style="visibility: visible; animation-duration: 1s; animation-delay: 0.6s; animation-name: fadeInUp;">
+                                 <div class="single_feature_one">
+                                     <div class="sf_top">
+                                         <span class="ti-email ss_six"></span>
+                                         <h2><a href="single-service.html" target="_blank">24/7 Strong Support</a></h2>
+                                     </div>		
+                                     <p>Lorem ipsum dolor sit amet consectetur adipiscing elit sed do eiusmod tempor ut labore.</p>
+                                 </div>					
+                             </div><!-- END COL -->																
+                         </div><!-- END ROW -->
+                     </div><!-- END CONTAINER -->
+                 </section>
+{% comment %} ========================== Qustion =========================={% endcomment %}
+
+                 <section class="faq_area section-padding">
+                    <div class="container">													
+                        <div class="section-title">
+                            <h2>Frequently Asked Question</h2>
+                            <p>General <span><u>Questions</u></span></p>
+                        </div>			
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6 col-sm-6 col-xs-12">
+                                <div class="accordion" id="accordionExample">
+                                  <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingOne">
+                                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        What does it take excellent author?
+                                      </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                      <div class="accordion-body">
+                                        Great value and so easy to use and saves me so much time! I was shocked by how much time and brain energy it saved me. Simple &amp; easy gotta love that. Great value and so easy to use.
+                                      </div>
+                                    </div>
+                                  </div><!-- END ACCORDION ITEM  -->
+                                  <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingTwo">
+                                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        Who will view my content?
+                                      </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                      <div class="accordion-body">
+                                        Great value and so easy to use and saves me so much time! I was shocked by how much time and brain energy it saved me. Simple &amp; easy gotta love that. Great value and so easy to use.
+                                      </div>
+                                    </div>
+                                  </div><!-- END ACCORDION ITEM  -->
+                                  <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingThree">
+                                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        What does it take become an author?
+                                      </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                      <div class="accordion-body">
+                                        Great value and so easy to use and saves me so much time! I was shocked by how much time and brain energy it saved me. Simple &amp; easy gotta love that. Great value and so easy to use.
+                                      </div>
+                                    </div>
+                                  </div><!-- END ACCORDION ITEM  -->
+                                  <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingFour">
+                                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        How to Change my Password easily?
+                                      </button>
+                                    </h2>
+                                    <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                      <div class="accordion-body">
+                                        Great value and so easy to use and saves me so much time! I was shocked by how much time and brain energy it saved me. Simple &amp; easy gotta love that. Great value and so easy to use.
+                                      </div>
+                                    </div>
+                                  </div><!-- END ACCORDION ITEM  -->	
+                                  <div class="accordion-item">
+                                    <h2 class="accordion-header" id="headingFive">
+                                      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive">
+                                        How does it create content?
+                                      </button>
+                                    </h2>
+                                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                                      <div class="accordion-body">
+                                        Great value and so easy to use and saves me so much time! I was shocked by how much time and brain energy it saved me. Simple &amp; easy gotta love that. Great value and so easy to use.
+                                      </div>
+                                    </div>
+                                  </div><!-- END ACCORDION ITEM  -->					  
+                                </div>						
+                            </div><!-- END COL  -->	
+                            <div class="col-lg-6 col-sm-6 col-xs-12">
+                                <div class="pt_faq">
+                                    <img src="{% static 'faq.png' %}" class="img-fluid" alt="image">
+                                </div>
+                            </div><!-- END COL  -->	
+                        </div><!--END  ROW  -->
+                    </div><!--- END CONTAINER -->
+                </section>
+{% endblock content %}
+    
