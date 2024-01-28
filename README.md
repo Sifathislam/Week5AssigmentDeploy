@@ -48,7 +48,6 @@ We welcome contributions! If you'd like to contribute to Peen, please follow the
 This project is licensed under the [MIT License](LICENSE).
 
 ## Acknowledgements
-- Special thanks to [any third-party libraries, resources, or tutorials used].
-- [Any other acknowledgments or credits.]
+- Special thanks to [Themforest, Switalart, Swifty, Google, Chatgpt].
 
 Feel free to reach out if you have any questions or concerns!
