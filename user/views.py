@@ -26,7 +26,8 @@ from django.core.mail import send_mail
 from user.models import UserAccount
 from django.views.generic import ListView
 from django.db.models import Q
-
+from django.contrib.auth import logout
+from django.contrib.auth.decorators import login_required
 class SignUpViewClass(SuccessMessageMixin, CreateView):
     template_name = 'form.html'
     success_url = reverse_lazy('login')
@@ -96,18 +97,24 @@ class UserLoginViewClass(LoginView):
         return context
 
 # This Class based user Logout
-@method_decorator(login_required, name= 'dispatch')
-class UserLogoutViewClass(LogoutView):
-    template_name = 'logout.html'
-    def get_success_url(self):
-       return reverse_lazy('homepage')
+# @method_decorator(login_required, name= 'dispatch')
+# class UserLogoutViewClass(LogoutView):
+#     template_name = 'logout.html'
+#     def get_success_url(self):
+#        return reverse_lazy('homepage')
     
-    def dispatch(self, request, *args, **kwargs):
-        response = super().dispatch(request, *args, **kwargs)
+#     def dispatch(self, request, *args, **kwargs):
+#         response = super().dispatch(request, *args, **kwargs)
 
-        messages.success(self.request, "You have been successfully logged out.")
-        return response
-    
+#         messages.success(self.request, "You have been successfully logged out.")
+#         return response
+
+@login_required(login_url='your_login_url')
+def user_logout_view(request):
+    logout(request)
+    messages.success(request, "You have been successfully logged out.")
+    return redirect(reverse_lazy('homepage'))
+
 @method_decorator(login_required, name= 'dispatch')
 class ProfileView(View):
     template_name = 'profile.html'
