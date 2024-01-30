@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="{% static 'css/slicknav.css' %}">
     <link rel="stylesheet" href="{% static 'css/styleformpeenwebsite.css' %}">
     <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
   </head>
   <body>
 
@@ -62,20 +63,20 @@
             <form class="d-flex input-group w-auto" method="get" action="{% url 'search' %}">
               <input
                   type="search"
-                  class="form-control rounded"
+                  class="form-control rounded search-responsive"
                   placeholder="Search"
                   aria-label="Search"
                   aria-describedby="search-addon"
                   name="search" 
               />
-              <span class="input-group-text border-0" id="search-addon">
+              <span class="input-group-text border-0 search-responsive" id="search-addon">
                   <button type="submit" style="border: none; background-color: transparent;">
                       <img src="{% static 'search.png' %}" role="button" tabindex="0" alt="">
                   </button>
               </span>
           </form>
             {% if request.user.is_authenticated %}
-            <form class="d-flex list-unstyled ms-5">
+            <form class="d-flex list-unstyled ms-5 resposive-profilelogo">
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <img src="{% static 'Profile.png' %}" class="rounded-circle" height="45" alt="Portrait of a Woman" loading="lazy"/>
@@ -90,9 +91,9 @@
               </li>
             </form>
           {% else %}
-            <form class="d-flex ms-4">
+            <form class="d-flex ms-4 responsive_button">
               <a class="hvr-bounce-to-bottom mx-3" href="{% url 'login' %}">Login</a>
-              <a class="btn-of-signup" href="{% url 'register' %}">Sign Up</a>
+              <a class="btn-of-signup" href="{% url 'register' %}">Register</a>
             </form>
           {% endif %}
           

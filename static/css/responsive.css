@@ -1,0 +1,103 @@
+@media screen and (max-width: 1280px){
+
+/*=======================  Root  section  ====================== */
+html, body{
+  height: 0px !important;
+}
+
+
+/*=======================  Navbar section  ====================== */
+.resposive-profilelogo{
+  justify-content: center;
+}
+
+/*=======================  Banner  section  ====================== */
+.home_image{
+  display: none !important;
+}
+
+/*=======================  Book section  ====================== */
+.BOOKS{
+  display: none !important;
+} 
+/*=======================  Partner section  ====================== */
+.partner-logo{
+  display: none !important ;
+}
+/*=======================   Card section  ====================== */
+.Card-Section{
+  display: none !important;
+}
+
+/*=======================   Deposite section  ====================== */
+.responsive-image-deposte{
+  display: none;
+}
+.resposive-deposte-amount{
+  width: 100% !important; 
+
+
+}
+
+
+
+
+}
+@media screen and (max-width: 1140px){
+
+/*=======================  Navbar  section  ====================== */
+.search-responsive{
+  display: none !important;
+}
+
+
+}
+
+
+@media screen and (max-width: 990px){
+  /*=======================  Navbar  section  ====================== */
+.navbar-nav{
+  text-align: start;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.input-group{
+  width: 50% !important;
+  margin: auto !important;  
+}
+.responsive_button{
+  justify-content: center;
+    margin: 20px;
+}
+/*=======================  Deposite section  ====================== */
+.text-9{
+  font-size:  24px !important;
+}
+
+.way-send-design-card{
+  margin-left:0px !important;
+} 
+.featured-box-icon{
+  display: none;
+}
+
+}
+
+
+@media screen and (max-width: 579px){
+  /*=======================  Banner section  ====================== */
+  .home_text h1,h1 span{
+    font-size: 45px !important;
+    line-height: 60px !important;
+  }
+  
+  
+  /*=======================  Deposite section  ====================== */
+  .resposive-section-guide-deposite{
+    display: none;
+  }
+
+}
