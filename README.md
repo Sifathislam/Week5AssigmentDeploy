@@ -3,6 +3,8 @@
 ## Overview
 Peen is a book selling and library management website built using Django's MVT architecture. It provides users with the ability to register, activate their accounts via email verification, deposit money, browse a book list, view and purchase individual books, search for books by name, return borrowed books, rate and comment on books, view publishers, see top publishers, and more.
 
+## Admin username: admin
+## Admin Password: 123
 ## Features
 - **User Authentication:**
   - Users can register and activate their accounts via email verification.
