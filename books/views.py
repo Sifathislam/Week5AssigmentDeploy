@@ -17,7 +17,7 @@ from django.db.models import Q
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import FormView,ListView,UpdateView,DeleteView
 from django.urls import reverse_lazy
-import stripe
+# import stripe
 from django.http import JsonResponse
 from django.shortcuts import redirect
 from django.urls import reverse
@@ -27,7 +27,7 @@ from django.views.generic import TemplateView
 from django.contrib.auth.decorators import login_required
 from django.conf import settings
 
-stripe.api_key = settings.STRIPE_SECRET_KEY
+# stripe.api_key = settings.STRIPE_SECRET_KEY
 # Create your views here.
 def send_transaction_email(user, subject, template):
         message = render_to_string(template, {
