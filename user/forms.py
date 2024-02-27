@@ -1,7 +1,7 @@
 from django import forms
 from  django.contrib.auth.forms import UserCreationForm, UserChangeForm
 from django.contrib.auth.models import User
-from .models import UserAccount
+from .models import UserAccount,publisherInfo
 
 #This form is crearted for the resgistion  
 class RegistationForm(UserCreationForm):
@@ -31,3 +31,10 @@ class ChangeUserForm(UserChangeForm):
     class Meta:
         model = User
         fields = ['username', 'first_name', 'last_name', 'email']
+
+
+
+class PublisherRegister(forms.ModelForm):
+    class Meta:
+        model = publisherInfo
+        fields = ['image','spaciality','about']

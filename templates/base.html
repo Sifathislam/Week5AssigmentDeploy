@@ -84,6 +84,13 @@
                 <div class="dropdown-menu profile_logo_design" aria-labelledby="navbarDropdown">
                   <h6 class="btn btn-success disabled">Balance:${{ request.user.account.balance }}</h6>
                   <a class="dropdown-item"href="{% url 'profile' %}">My profile</a>
+                  
+                  {% if request.user.account.publisherAccount.adminPermission %}
+                  <a class="dropdown-item"href="{% url 'Add_Book' %}">Publish Your Book </a>
+                  <a class="dropdown-item"href="{% url 'Book_list' %}">Your Book List</a>
+                  {% else %}
+                  <a class="dropdown-item"href="{% url 'PublisherResigter' %}">Become a Publisher</a>
+                  {% endif %}
                   <a href="{% url 'ProfileChange' %}" class="dropdown-item">Change Profile</a> 
                   <a href="{% url 'Changepaswwod' %}" class="dropdown-item">Change Password</a> 
                   {% comment %} <a class="dropdown-item" href="{% url 'logout' %}">Favorite List</a> {% endcomment %}
@@ -185,9 +192,7 @@
             <!-- Content -->
             <img src="{% static 'logo2.png' %}" alt="" srcset="" style="width: 200px; margin-bottom: 60px;">
             <p>
-              Here you can use rows and columns to organize your footer
-              content. Lorem ipsum dolor sit amet, consectetur adipisicing
-              elit.
+              Empowering individuals through knowledge. Learn more about our mission, team, and values.
             </p>
           </div>
           <!-- Grid column -->

@@ -2,10 +2,11 @@ from django.shortcuts import render,redirect
 from . import forms
 from . import models
 from django.views.generic.edit import CreateView
+from django.views.generic import FormView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse_lazy
 from django.contrib import messages
-from django.contrib.auth.views import LoginView, LogoutView, PasswordChangeView
+from django.contrib.auth.views import LoginView,PasswordChangeView
 from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.views import View
@@ -16,18 +17,15 @@ from django.contrib.sites.shortcuts import get_current_site
 from django.template.loader import render_to_string
 from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.utils.encoding import force_bytes, force_str
-from django.http import HttpResponse
-from django.shortcuts import render, redirect
 from django.contrib import messages
-from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
-from django.contrib.messages.views import SuccessMessageMixin
 from django.core.mail import send_mail
 from user.models import UserAccount
 from django.views.generic import ListView
 from django.db.models import Q
 from django.contrib.auth import logout
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.mixins import LoginRequiredMixin
+
 class SignUpViewClass(SuccessMessageMixin, CreateView):
     template_name = 'form.html'
     success_url = reverse_lazy('login')
@@ -153,16 +151,18 @@ class ChangePassWordClass(PasswordChangeView):
 class Publishers_View(ListView):
     template_name = 'publisherAll.html'
     model = models.publisherInfo
-    context_object_name = 'data'
+    # context_object_name = 'data'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
         # Filter publishers with soldBookCount greater than 50
-        top_publishers = models.publisherInfo.objects.filter(soldBookCount__gt=50)
+        top_publishers = models.publisherInfo.objects.filter(adminPermission=True, soldBookCount__gt=50)
+        data =  models.publisherInfo.objects.filter(adminPermission=True)
 
         # Add the filtered publishers to the context
         context['top_publishers'] = top_publishers
+        context['data'] = data 
 
         return context
 
@@ -180,3 +180,18 @@ def Search_Publisher_Fillter(request):
         data = models.publisherInfo.objects.all()
 
     return render(request, 'publisherAll.html', {'data': data})
+class PublisherResigterView(LoginRequiredMixin, FormView):
+    model = models.publisherInfo
+    form_class = forms.PublisherRegister
+    template_name = 'publisherRegister.html'
+    success_url = reverse_lazy('homepage')
+    context_object_name = 'form'
+    success_message = "Your Publisher Application Form Successfully Submited"
+    def form_valid(self, form):
+        # Get the UserAccount instance associated with the current user
+        user_account = self.request.user.account
+        # Assign the UserAccount instance to the user field of the publisherInfo model
+        form.instance.user = user_account
+        form.save()
+        messages.success(self.request, self.success_message)
+        return super().form_valid(form)

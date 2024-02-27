@@ -11,6 +11,7 @@ urlpatterns = [
     path('ProfileChange/', views.edit_profile, name='ProfileChange'),
     path('Publishers/', views.Publishers_View.as_view(), name='Publishers'),
     path('searchPublisher/', views.Search_Publisher_Fillter, name='searchPublisher'),
+    path('PublisherResigter/', views.PublisherResigterView.as_view(), name='PublisherResigter'),
 
 
 ]

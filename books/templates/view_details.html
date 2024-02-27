@@ -621,7 +621,9 @@
                                 {% if request.user.is_authenticated %}
                                 <form method="post">
                                     {% csrf_token %}
+                                    {% comment %} <a href="{% url 'CheckoutAndBorrowView' id=object.id %}" class="btn btn-primary w-25 ms-3">Buy Now</a> {% endcomment %}
                                     <a href="{% url 'buynow' id=object.id userid=request.user.id%}" class="btn btn-primary w-25 ms-3">Buy Now</a>
+                                    {% comment %} <a href="{% url 'create_checkout_session' %}" class="btn btn-primary w-25 ms-3">Buy Now</a> {% endcomment %}
                                 </form>
                             {% endif %}
                             </div>

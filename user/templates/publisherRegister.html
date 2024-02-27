@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{%  load crispy_forms_tags %}
+
+
+{% block content %}
+<h1 class ="text-center text-dark edit_porfile_title">Publisher Registation</h1>
+<form style="width:50% ; margin : auto" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form | crispy}}
+
+<button class="btn btn-success">Submit</button>
+</form>
+{% endblock content %}
+    

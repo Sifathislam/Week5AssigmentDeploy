@@ -11,10 +11,11 @@ class UserAccount(models.Model):
 
 class publisherInfo(models.Model):
     image = models.ImageField(upload_to='user/media/uploads', height_field=None, width_field=None, max_length=None,default='')
-    user = models.OneToOneField(UserAccount, on_delete=models.CASCADE)
+    user = models.OneToOneField(UserAccount, on_delete=models.CASCADE, related_name='publisherAccount')
     spaciality = models.CharField(max_length=150)
     about = models.TextField()
     soldBookCount = models.IntegerField(null = True, blank = True, default='0')
+    adminPermission = models.BooleanField(null = True, blank = True, default = False)
 
     def __str__(self):
         return str(self.user.user.first_name)

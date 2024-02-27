@@ -150,8 +150,8 @@ LOGIN_URL = '/user/login/'
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
-
-
+STRIPE_SECRET_KEY = env("STRIPE_SECRET_KEY")
+STRIPE_WEBHOOK_SECRET = env('STRIPE_WEBHOOK_SECRET')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 

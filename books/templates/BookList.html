@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+<h1 class="text-center" style="margin-top: 100px;">Books List</h1>
+<table class="table table-bordered border-success mt-4">    
+  <thead>
+  <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Book Name</th>
+      <th scope="col">Category</th>
+      <th scope="col">Price</th>
+      <th scope="col">Quantity</th>
+      <th scope="col">Description</th>
+      <th scope="col">Delete</th>
+
+  </tr>
+  </thead>
+  <tbody>
+      {% for val in books %}
+      <tr>
+      <th scope="row">{{val.id}}</th>
+      <td>{{val.title}}</td>
+      <td>{{val.category.name}}</td>
+      <td>{{val.price}}</td>
+      <td>{{val.quntity}}</td>
+      <td>{{val.description | truncatewords:10}}</td>
+      <td>
+        <a href="{% url 'DeleteBook' pk=val.id %}" class="btn btn-danger">Delete</a>
+        <a href="{% url 'EditBook' pk=val.id %}" class="btn btn-primary">Edit</a>
+      </td>
+      </tr>
+  {% endfor %}
+  </tbody>
+</table>
+    
+{% endblock content %}
+    

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{%  load crispy_forms_tags %}
+
+
+{% block content %}
+<h1 class ="text-center text-dark edit_porfile_title">Are You Sure</h1>
+<form style="width:50% ; margin : auto" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form | crispy}}
+
+<button class="btn btn-success">YES</button>
+<a href="{% url 'Book_list' %}" class="btn btn-danger">NO</a>
+</form>
+{% endblock content %}
+    
